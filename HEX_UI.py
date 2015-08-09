@@ -98,7 +98,9 @@ class playPanel(wx.Panel):
         for i in range(self.num_Y):
 		if (self.hex_vrtx[i][0][0][0] < x < self.hex_vrtx[i][num_X - 1][3][0]) and (self.hex_vrtx[i][0][1][1] > y > self.hex_vrtx[i][num_X - 1][4][1]):
 			for j in range(self.num_X):
-			        if self.is_include(x,y,self.hex_vrtx[i][j]):					
+
+
+			        if self.is_include(x,y,self.hex_vrtx[i][j]) and self.state[i][j] == 0:
 					self.state[i][j] = self.player_flag
 					print str(self.player_flag)+"["+str(i)+","+chr(97+j)+"]"
 					self.player_flag = 1 + self.player_flag % 2
